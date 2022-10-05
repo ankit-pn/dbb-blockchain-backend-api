@@ -42,9 +42,8 @@ var myContract = new web3.eth.Contract(CONTRACT_ABI.CONTRACT_ABI, process.env.CO
 const postCID = async (user, cid, fileName) => {
     const res = await myContract.methods.addCID(user,cid,fileName).send({
         from: process.env.ACCOUNT
-    }).then((res)=>console.log(res)).catch((err)=>{
-        console.log(err);
-    })
+    });
+    return res;
 };
 const getCID = async (user) => {
     const data = await myContract.methods.get(user).call();
@@ -62,7 +61,7 @@ app.post("/postCID", async (req, res) => {
     await postCID(user, cid, fileName).then((result) => {
         res.status(201).send({
             message: "Date Saved Suceessfully",
-            result,
+            info: result,
         });
     })
         .catch((error) => {
@@ -79,7 +78,7 @@ app.get("/getCID", async (req, res) => {
         res.json(result);
     }).catch(
         (err)=>{
-            console.log(user);
+            // console.log(user);
             console.log(err);
         }
     );
