@@ -1,14 +1,11 @@
 {
-  "name": "dbb-api",
+  "name": "dbb-blockchain-backend-api",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server.js",
-    "build": "node server.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
@@ -21,5 +18,9 @@
     "nodemon": "^2.0.15",
     "truffle-hdwallet-provider": "^1.0.17",
     "web3": "^1.6.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
   }
 }
+
