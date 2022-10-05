@@ -32,7 +32,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get("/", (request, response, next) => {
     response.json({ message: "Hey! This is your server response!" });
-    next();
+    // next();
 });
 
 var provider = new HDWalletProvider(process.env.MNEMONIC, 'https://goerli.infura.io/v3/' + process.env.INFURA_API_KEY);
